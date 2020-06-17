@@ -8,7 +8,7 @@ const geolocation = require('./utils/geocode');
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 
-
+const port = process.env.PORT;
 
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
@@ -69,6 +69,6 @@ app.get('*', (req, res) => {
     });
 })
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(port, () => {
+    console.log('Server is running on port ' + port);
 });
